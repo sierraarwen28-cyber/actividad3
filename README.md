@@ -28,17 +28,27 @@ Se implementaron dos rutas principales para la autenticación de usuarios:
 - **POST /register**: permite registrar un nuevo usuario.  
   En esta ruta se valida que los datos estén completos, se cifra la contraseña utilizando bcryptjs y se almacena el usuario en un archivo `usuarios.json`.
 
+  ![alt text](image-2.png)
+
 - **POST /login**: permite iniciar sesión.  
   Se verifica que el usuario exista y que la contraseña sea correcta. Si las credenciales son válidas, se genera un token JWT, el cual es utilizado posteriormente para acceder a las rutas protegidas.
+
+  ![alt text](image-3.png)
+
+
+  ![alt text](image-4.png)  
 
 ### Rutas de tareas (CRUD)
 Las rutas relacionadas con las tareas están protegidas mediante un middleware de autenticación. Estas rutas son:
 
 - **GET /tareas**: devuelve todas las tareas almacenadas en el archivo `tareas.json`.
+![alt text](image-5.png)
 - **POST /tareas**: permite crear una nueva tarea, la cual incluye un título y una descripción.
+![alt text](image-7.png)
 - **PUT /tareas/:id**: actualiza una tarea existente utilizando su identificador.
+![alt text](image-8.png)
 - **DELETE /tareas/:id**: elimina una tarea específica según su identificador.
-
+![alt text](image-9.png)
 Cada tarea cuenta con un identificador único generado a partir del tiempo actual, lo que permite distinguirlas de manera sencilla.
 
 ---
